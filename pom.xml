@@ -11,6 +11,23 @@
 	<url>http://www.developerworld.org</url>
 	<description>所有dw内应用maven的项目，均会直接后间接应用到本pom的配置</description>
 
+	<organization>
+		<name>DeveloperWorld.org</name>
+		<url>http://www.developerworld.org/</url>
+	</organization>
+
+	<!-- 开发者列表 -->
+	<developers>
+		<developer>
+			<id>Roy</id>
+			<name>Roy Huang</name>
+			<email>huangruoru@live.cn</email>
+			<roles>
+				<role>Owner</role>
+			</roles>
+		</developer>
+	</developers>
+
 	<!-- 定义配置信息 -->
 	<properties>
 		<java.version>1.5</java.version>
@@ -96,6 +113,17 @@
 				<includes>
 					<include>**/*.xml</include>
 					<include>**/*.properties</include>
+				</includes>
+			</testResource>
+			<testResource>
+				<directory>${project.basedir}/src/test/sql</directory>
+				<filtering>false</filtering>
+			</testResource>
+			<testResource>
+				<directory>${project.basedir}/src/test/sql</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.sql</include>
 				</includes>
 			</testResource>
 		</testResources>
