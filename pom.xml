@@ -70,9 +70,6 @@
 	</distributionManagement>
 
 	<build>
-		<!-- 设置打包输出名 -->
-		<finalName>${project.artifactId}-${project.version}</finalName>
-
 		<!-- 设置资源响应动态配置 -->
 		<resources>
 			<resource>
