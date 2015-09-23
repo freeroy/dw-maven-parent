@@ -4,7 +4,7 @@
 
 	<groupId>org.developerworld.maven</groupId>
 	<artifactId>dw-maven-parent</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<packaging>pom</packaging>
 	<name>dw maven pom parent</name>
 	<url>http://www.developerworld.org</url>
@@ -43,9 +43,9 @@
 
 	<!-- 配置svn发布位置 -->
 	<scm>
-		<connection>${scm.connection}</connection>
-		<developerConnection>${scm.developerConnection}</developerConnection>
-		<url>${scm.url}</url>
+		<connection>scm:git:ssh://github.com/freeroy/${project.artifactId}.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/freeroy/${project.artifactId}.git</developerConnection>
+		<url>http://github.com/freeroy/${project.artifactId}</url>
 		<tag>HEAD</tag>
 	</scm>
 
