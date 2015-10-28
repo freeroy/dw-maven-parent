@@ -57,10 +57,22 @@
 		<repository>
 			<id>dw-maven-releases-repository</id>
 			<url>https://raw.githubusercontent.com/freeroy/dw-maven-releases-repository/master</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</repository>
 		<repository>
 			<id>dw-maven-snapshots-repository</id>
 			<url>https://raw.githubusercontent.com/freeroy/dw-maven-snapshots-repository/master</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
 		</repository>
 	</repositories>
 
