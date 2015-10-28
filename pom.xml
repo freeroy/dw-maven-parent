@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.developerworld.maven</groupId>
@@ -37,8 +38,11 @@
 		<scm.url>http://github.com/freeroy/${project.artifactId}</scm.url>
 		<!-- 仓库配置 -->
 		<distribution.server>http://repository.developerworld.org</distribution.server>
-		<distribution.repository>${distribution.server}/content/repositories/releases</distribution.repository>
-		<distribution.snapshotRepository>${distribution.server}/content/repositories/snapshots</distribution.snapshotRepository>
+		<!-- <distribution.releaseRepository>${distribution.server}/content/repositories/releases</distribution.releaseRepository> 
+			<distribution.snapshotRepository>${distribution.server}/content/repositories/snapshots</distribution.snapshotRepository> -->
+		<!-- 部署在本地 -->
+		<distribution.releaseRepository>file:E:/dw-local-maven-repository/releases/</distribution.releaseRepository>
+		<distribution.snapshotRepository>file:E:/dw-local-maven-repository/snapshots/</distribution.snapshotRepository>
 	</properties>
 
 	<!-- 配置svn发布位置 -->
@@ -49,6 +53,18 @@
 		<tag>HEAD</tag>
 	</scm>
 
+	<!-- 设置github部署的maven仓库 -->
+	<repositories>
+		<repository>
+			<id>dw-maven-release-repository</id>
+			<url>https://raw.githubusercontent.com/freeroy/dw-maven-release-repository/master</url>
+		</repository>
+		<repository>
+			<id>dw-maven-snapshot-repository</id>
+			<url>https://raw.githubusercontent.com/freeroy/dw-maven-snapshot-repository/master</url>
+		</repository>
+	</repositories>
+
 	<!-- 任务跟踪系统 -->
 	<issueManagement>
 		<system>GitHub Issue Management</system>
@@ -57,11 +73,11 @@
 	<!-- 持续集成系统 <ciManagement> <system>Travis CI</system> <url>https://travis-ci.org/freeroy/${scm.project_name}</url> 
 		</ciManagement> -->
 
-	<!-- 配置部署的远程仓库 -->
+	<!-- 配置部署的仓库 -->
 	<distributionManagement>
 		<repository>
 			<id>releases</id>
-			<url>${distribution.repository}</url>
+			<url>${distribution.releaseRepository}</url>
 		</repository>
 		<snapshotRepository>
 			<id>snapshots</id>
@@ -186,6 +202,18 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-war-plugin</artifactId>
 					<version>2.4</version>
+				</plugin>
+				<!-- 文件打包插件 -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>2.6</version>
+				</plugin>
+				<!-- 依赖关系配置插件 -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<version>2.10</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>
