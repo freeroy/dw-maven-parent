@@ -56,12 +56,12 @@
 	<!-- 设置github部署的maven仓库 -->
 	<repositories>
 		<repository>
-			<id>dw-maven-release-repository</id>
-			<url>https://raw.githubusercontent.com/freeroy/dw-maven-release-repository/master</url>
+			<id>dw-maven-releases-repository</id>
+			<url>https://raw.githubusercontent.com/freeroy/dw-maven-releases-repository/master</url>
 		</repository>
 		<repository>
-			<id>dw-maven-snapshot-repository</id>
-			<url>https://raw.githubusercontent.com/freeroy/dw-maven-snapshot-repository/master</url>
+			<id>dw-maven-snapshots-repository</id>
+			<url>https://raw.githubusercontent.com/freeroy/dw-maven-snapshots-repository/master</url>
 		</repository>
 	</repositories>
 
