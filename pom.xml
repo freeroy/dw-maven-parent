@@ -35,10 +35,6 @@
 		<scm.connection>scm:git:ssh://github.com/freeroy/${project.artifactId}.git</scm.connection>
 		<scm.developerConnection>scm:git:ssh://git@github.com/freeroy/${project.artifactId}.git</scm.developerConnection>
 		<scm.url>http://github.com/freeroy/${project.artifactId}</scm.url>
-		<!-- 仓库配置 -->
-		<distribution.server>http://repository.developerworld.org</distribution.server>
-		<!-- <distribution.releaseRepository>${distribution.server}/content/repositories/releases</distribution.releaseRepository> 
-			<distribution.snapshotRepository>${distribution.server}/content/repositories/snapshots</distribution.snapshotRepository> -->
 		<!-- 部署在本地 -->
 		<distribution.releaseRepository>file:E:/dw-local-maven-repository/releases/</distribution.releaseRepository>
 		<distribution.snapshotRepository>file:E:/dw-local-maven-repository/snapshots/</distribution.snapshotRepository>
