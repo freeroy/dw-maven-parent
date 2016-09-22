@@ -4,14 +4,14 @@
 
 	<groupId>org.developerworld.maven</groupId>
 	<artifactId>dw-maven-parent</artifactId>
-	<version>0.0.5-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>dw maven pom parent</name>
 	<url>http://www.developerworld.org</url>
 	<description>所有dw内应用maven的项目，均会直接后间接应用到本pom的配置</description>
 
 	<organization>
-		<name>DeveloperWorld.org</name>
+		<name>developerworld.org</name>
 		<url>http://www.developerworld.org/</url>
 	</organization>
 
@@ -35,9 +35,6 @@
 		<scm.connection>scm:git:ssh://github.com/freeroy/${project.artifactId}.git</scm.connection>
 		<scm.developerConnection>scm:git:ssh://git@github.com/freeroy/${project.artifactId}.git</scm.developerConnection>
 		<scm.url>http://github.com/freeroy/${project.artifactId}</scm.url>
-		<!-- 部署在本地 -->
-		<distribution.releaseRepository>file:E:/dw-local-maven-repository/releases/</distribution.releaseRepository>
-		<distribution.snapshotRepository>file:E:/dw-local-maven-repository/snapshots/</distribution.snapshotRepository>
 	</properties>
 
 	<!-- 配置svn发布位置 -->
@@ -84,11 +81,11 @@
 	<distributionManagement>
 		<repository>
 			<id>releases</id>
-			<url>${distribution.releaseRepository}</url>
+			<url>${env.MAVEN_DISTRIBUTION_REPOSITORY_LOCAL}</url>
 		</repository>
 		<snapshotRepository>
 			<id>snapshots</id>
-			<url>${distribution.snapshotRepository}</url>
+			<url>${env.MAVEN_DISTRIBUTION_SNAPSHOT_REPOSITORY_LOCAL}</url>
 		</snapshotRepository>
 	</distributionManagement>
 
